@@ -23,6 +23,7 @@ createApp({
                 this.emails.push(risposta.data.response);
             })
         }
+        
         console.log(this.emails);
 
     }
