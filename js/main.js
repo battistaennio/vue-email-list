@@ -7,24 +7,23 @@ createApp({
 
     data(){
         return {
-            email: "",
-
-
+            emails: [],
         }
     },
 
     methods: {
 
-
-
     },
 
     mounted() {
 
-        axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
+        for(i = 0; i < 10; i++){
+            axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then(risposta => {
-                console.log(risposta.data.response);     
+                this.emails.push(risposta.data.response);
             })
+        }
+        console.log(this.emails);
 
     }
 
